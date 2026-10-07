@@ -114,6 +114,36 @@ export const courses = [
     dept: 'دپارتمان برق',
     image: `${UP}/2022/02/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A8%D8%B1%D9%82-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86.webp`,
   },
+  {
+    title: 'آموزش تعمیرات برد الکترونیکی',
+    dept: 'دپارتمان برق',
+    image: `${UP}/2020/12/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%D8%A7%D8%AA-%D9%84%D9%88%D8%A7%D8%B2%D9%85-%D8%AE%D8%A7%D9%86%DA%AF%DB%8C.webp`,
+  },
+  {
+    title: 'آموزش نصب پنل خورشیدی',
+    dept: 'دپارتمان برق',
+    image: `${UP}/2022/02/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A8%D8%B1%D9%82-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86.webp`,
+  },
+  {
+    title: 'آموزش ICDL',
+    dept: 'دپارتمان فناوری اطلاعات',
+    image: `${UP}/2020/12/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%D8%A7%D8%AA-%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE.webp`,
+  },
+  {
+    title: 'آموزش تعمیرات پکیج',
+    dept: 'دپارتمان تاسیسات',
+    image: `${UP}/2020/12/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%D8%A7%D8%AA-%D9%84%D9%88%D8%A7%D8%B2%D9%85-%D8%AE%D8%A7%D9%86%DA%AF%DB%8C.webp`,
+  },
+  {
+    title: 'آموزش نصب کولر گازی',
+    dept: 'دپارتمان تاسیسات',
+    image: `${UP}/2022/02/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A8%D8%B1%D9%82-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86.webp`,
+  },
+  {
+    title: 'آموزش تعمیرات گیربکس اتوماتیک',
+    dept: 'دپارتمان اتومکانیک',
+    image: `${UP}/2023/01/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%DA%A9%D8%A7%D9%86%DB%8C%DA%A9-%D8%AE%D9%88%D8%AF%D8%B1%D9%88.webp`,
+  },
 ]
 
 export const footerColumns = [

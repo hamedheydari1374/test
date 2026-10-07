@@ -26,6 +26,13 @@ The dev server listens on host port 3000 (the preview entry point).
 - Department icons and course thumbnails are **hotlinked** from `fanamoozan.com`
   (see `src/data/site.js`). They need outbound network in the browser; the layout still
   holds without them.
+- Content for the lower page sections (videos, modality, comparison, outcomes, FAQ,
+  testimonials, blog, class calendar) lives in `src/data/sections.js`. It **reuses the
+  course image URLs** for thumbnails rather than inventing new asset paths, so every
+  thumbnail resolves. Add new content there, not in the components.
+- Two components hold local UI state: `Faq.jsx` (native `<details>` accordion, no JS)
+  and `Testimonials.jsx` (index state + `scrollIntoView`, which follows RTL natively —
+  do not switch it to manual `scrollLeft` math).
 - `vite.config.js` extends the dev-server host allowlist with
   `.<BASE44_SANDBOX_HOST_DOMAIN>` **only when `BASE44_PREVIEW_MODE` is exactly `"1"`**.
   With the flag unset/other, Vite keeps its default localhost-only allowlist. Do not

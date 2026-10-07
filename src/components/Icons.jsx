@@ -185,6 +185,31 @@ export function IconStar({ size = 16, className }) {
   )
 }
 
+export function IconPlay({ size = 20, className }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" className={className}>
+      <path d="M8 5.5v13l11-6.5-11-6.5Z" />
+    </svg>
+  )
+}
+
+export function IconCross({ size, className }) {
+  return (
+    <Svg size={size} className={className}>
+      <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />
+    </Svg>
+  )
+}
+
+export function IconCalendar({ size, className }) {
+  return (
+    <Svg size={size} className={className}>
+      <rect x="3" y="5" width="18" height="16" rx="2.4" />
+      <path d="M3 10h18M8 3.5V6M16 3.5V6" />
+    </Svg>
+  )
+}
+
 export const iconByName = {
   workshop: IconWorkshop,
   support: IconSupport,
