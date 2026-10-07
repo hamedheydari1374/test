@@ -24,6 +24,14 @@
 
   --color-navy-800: #16263f;
   --color-navy-900: #0f1b2d;
+
+  /* Dark surfaces of the single-course page */
+  --color-night-700: #262626;
+  --color-night-800: #1a1a1a;
+  --color-night-900: #111111;
+
+  --color-royal-500: #0d6efd;
+  --color-royal-600: #0b5ed7;
 }
 
 @layer base {

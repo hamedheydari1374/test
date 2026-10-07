@@ -1,5 +1,6 @@
 import { IconCertificate } from './Icons.jsx'
-import { courses } from '../data/site.js'
+import { Link } from '../router.jsx'
+import { courseSlugs, courses } from '../data/site.js'
 
 export default function Courses() {
   return (
@@ -14,8 +15,8 @@ export default function Courses() {
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {courses.map(({ title, dept, image }) => (
           <li key={title}>
-            <a
-              href="#course"
+            <Link
+              to={`/course/${courseSlugs[title] ?? 'mobile-repair-training'}`}
               className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-100"
             >
               <div className="relative aspect-[16/11] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
@@ -43,7 +44,7 @@ export default function Courses() {
                   مشاهده دوره
                 </span>
               </div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

@@ -1,44 +1,21 @@
+import { useRoute } from './router.jsx'
 import TopBar from './components/TopBar.jsx'
 import ContactBar from './components/ContactBar.jsx'
 import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import StatsBar from './components/StatsBar.jsx'
-import Departments from './components/Departments.jsx'
-import About from './components/About.jsx'
-import Courses from './components/Courses.jsx'
-import VideoShowcase from './components/VideoShowcase.jsx'
-import ModalityInfo from './components/ModalityInfo.jsx'
-import BenefitsCompare from './components/BenefitsCompare.jsx'
-import CareerCTA from './components/CareerCTA.jsx'
-import Faq from './components/Faq.jsx'
-import Outcomes from './components/Outcomes.jsx'
-import Testimonials from './components/Testimonials.jsx'
-import Blog from './components/Blog.jsx'
-import ClassCalendar from './components/ClassCalendar.jsx'
 import Footer from './components/Footer.jsx'
+import Home from './pages/Home.jsx'
+import CoursePage from './pages/CoursePage.jsx'
 
 export default function App() {
+  const path = useRoute()
+  const courseMatch = path.match(/^\/course\/([^/]+)\/?$/)
+
   return (
-    <div className="min-h-screen bg-cream font-sans">
+    <div className="min-h-screen font-sans">
       <TopBar />
       <ContactBar />
       <Navbar />
-      <main>
-        <Hero />
-        <StatsBar />
-        <Departments />
-        <About />
-        <Courses />
-        <VideoShowcase />
-        <ModalityInfo />
-        <BenefitsCompare />
-        <CareerCTA />
-        <Faq />
-        <Outcomes />
-        <Testimonials />
-        <Blog />
-        <ClassCalendar />
-      </main>
+      <main>{courseMatch ? <CoursePage slug={decodeURIComponent(courseMatch[1])} /> : <Home />}</main>
       <Footer />
     </div>
   )

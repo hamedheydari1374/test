@@ -10,13 +10,14 @@ export const site = {
   email: 'info@fanamoozan.com',
 }
 
+// Hrefs are rooted ("/#x") so the same header works from the course page too.
 export const navLinks = [
-  { label: 'دوره‌ها', href: '#courses', hasMenu: true },
-  { label: 'برنامه کلاس‌ها', href: '#schedule' },
-  { label: 'شهریه دوره‌ها', href: '#tuition' },
-  { label: 'اشتغال', href: '#employment' },
-  { label: 'مجله', href: '#magazine' },
-  { label: 'تماس با ما', href: '#contact' },
+  { label: 'دوره‌ها', href: '/#courses', hasMenu: true },
+  { label: 'برنامه کلاس‌ها', href: '/#schedule' },
+  { label: 'شهریه دوره‌ها', href: '/#tuition' },
+  { label: 'اشتغال', href: '/#employment' },
+  { label: 'مجله', href: '/#magazine' },
+  { label: 'تماس با ما', href: '/#contact' },
 ]
 
 export const socials = [
@@ -145,6 +146,26 @@ export const courses = [
     image: `${UP}/2023/01/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%DA%A9%D8%A7%D9%86%DB%8C%DA%A9-%D8%AE%D9%88%D8%AF%D8%B1%D9%88.webp`,
   },
 ]
+
+// URL slug per course title, used to open /course/<slug>.
+export const courseSlugs = {
+  'آموزش تعمیرات موبایل': 'mobile-repair-training',
+  'آموزش تعمیرات لپ تاپ': 'laptop',
+  'آموزش تعمیرات لوازم خانگی': 'home-appliances-repair-training',
+  'آموزش مکانیک خودرو': 'auto-mechanic-training',
+  'آموزش برق خودرو': 'car-electricity-training',
+  'آموزش تعمیرات ایسیو': 'car-ecu-repair',
+  'آموزش صافکاری (PDR و سنتی)': 'auto-body-training',
+  'آموزش کارشناسی رنگ خودرو': 'car-paint-inspection-training',
+  'آموزش نقاشی خودرو': 'car-painting-training',
+  'آموزش برق ساختمان': 'building-electrical-training',
+  'آموزش تعمیرات برد الکترونیکی': 'electronic-board-repairing',
+  'آموزش نصب پنل خورشیدی': 'solar-panel-installation-training',
+  'آموزش ICDL': 'icdl',
+  'آموزش تعمیرات پکیج': 'wall-boiler-repair',
+  'آموزش نصب کولر گازی': 'training-cooler',
+  'آموزش تعمیرات گیربکس اتوماتیک': 'gearbox-repair-training',
+}
 
 export const footerColumns = [
   {

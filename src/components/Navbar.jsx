@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { IconChevronDown, IconSearch } from './Icons.jsx'
+import { Link } from '../router.jsx'
 import { navLinks, site } from '../data/site.js'
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-2.5">
+    <Link to="/" className="flex items-center gap-2.5">
       <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gold-500 text-lg font-black text-navy-900 shadow-sm">
         ف
       </span>
@@ -12,7 +13,7 @@ function Logo() {
         <span className="block text-[15px] font-extrabold text-ink">آموزشگاه فن‌آموزان</span>
         <span className="block text-[11px] text-muted">فیدار</span>
       </span>
-    </a>
+    </Link>
   )
 }
 
@@ -27,13 +28,13 @@ export default function Navbar() {
         <ul className="hidden items-center gap-1 text-[14px] font-medium text-ink xl:flex">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className="flex items-center gap-1 rounded-lg px-3 py-2 transition hover:bg-gold-50 hover:text-gold-700"
               >
                 {link.label}
                 {link.hasMenu && <IconChevronDown size={15} />}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -76,13 +77,13 @@ export default function Navbar() {
         <ul className="border-t border-slate-100 bg-white px-4 py-3 text-sm font-medium xl:hidden">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 onClick={() => setOpen(false)}
                 className="block rounded-lg px-3 py-2.5 hover:bg-gold-50 hover:text-gold-700"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="mt-2 flex gap-2 border-t border-slate-100 pt-3">

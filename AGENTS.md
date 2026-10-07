@@ -33,6 +33,19 @@ The dev server listens on host port 3000 (the preview entry point).
 - Two components hold local UI state: `Faq.jsx` (native `<details>` accordion, no JS)
   and `Testimonials.jsx` (index state + `scrollIntoView`, which follows RTL natively —
   do not switch it to manual `scrollLeft` math).
+- Routing is a small hand-rolled router in `src/router.jsx` (`useRoute` + `Link` + `navigate`)
+  — there is **no react-router dependency**. Use `Link` for in-app navigation; it handles
+  both paths and anchors (`/#courses`). Plain `<a href>` causes a full page load. Vite's SPA
+  fallback serves `index.html` for `/course/<slug>`, so deep links and refreshes work.
+- Routes: `/` → `src/pages/Home.jsx`, `/course/<slug>` → `src/pages/CoursePage.jsx`
+  (slug ↔ title map is `courseSlugs` in `src/data/site.js`; course-page content is in
+  `src/data/course.js`).
+- The course page reflects the matched course only in its hero (title/department/image).
+  The rest of its body — syllabus, pricing, outcomes — is **template content for the demo
+  course** (`تعمیرات موبایل`), so every slug currently shows the same body. Give the other
+  courses their own content before treating that page as real.
+- `src/components/course/*` are dark-themed (`night-*` tokens); `src/components/*` are the
+  light homepage sections. Keep the two palettes separate.
 - `vite.config.js` extends the dev-server host allowlist with
   `.<BASE44_SANDBOX_HOST_DOMAIN>` **only when `BASE44_PREVIEW_MODE` is exactly `"1"`**.
   With the flag unset/other, Vite keeps its default localhost-only allowlist. Do not
