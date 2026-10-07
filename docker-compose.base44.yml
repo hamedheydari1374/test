@@ -1,0 +1,35 @@
+services:
+  web:
+    # Runs the app from the cloned source with Vite's dev server (HMR), so edits
+    # in src/ show up in the preview without rebuilding anything.
+    image: node:22
+    working_dir: /app
+    command: ['sh', '-ec', 'CI=true npm install --no-audit --no-fund && exec npm run dev']
+    ports:
+      - '3000:3000'
+    volumes:
+      # Source is bind-mounted; node_modules lives in a named volume so the
+      # repo stays clean and the install survives container restarts.
+      - .:/app
+      - web_node_modules:/app/node_modules
+    environment:
+      - CI=true
+      # Bare pass-throughs: the platform supplies the values.
+      - BASE44_PREVIEW_MODE
+      - BASE44_SANDBOX_HOST_DOMAIN
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+    restart: on-failure
+    healthcheck:
+      # Probes the dev server actually serving the page, not just an open port.
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 90s
+
+volumes:
+  web_node_modules:

@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Vazirmatn', 'IRANSansX', Tahoma, ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream: #fcfcfc;
+  --color-ink: #222222;
+  --color-muted: #6f7480;
+
+  --color-gold-50: #fff9ec;
+  --color-gold-100: #fdf1cf;
+  --color-gold-200: #fbe19b;
+  --color-gold-300: #f9cd5f;
+  --color-gold-400: #f7bd31;
+  --color-gold-500: #f5b718;
+  --color-gold-600: #d99a0d;
+  --color-gold-700: #a9720f;
+  --color-gold-800: #875712;
+  --color-gold-900: #734815;
+
+  --color-mint-50: #eef9f9;
+  --color-mint-200: #c5e6e6;
+  --color-mint-500: #4fb3b3;
+
+  --color-navy-800: #16263f;
+  --color-navy-900: #0f1b2d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+  }
+}
+
+@keyframes fz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fz-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fz-spin {
+  animation: fz-spin 60s linear infinite;
+}
+
+/* Counter-rotation keeps the orbiting chips upright while the ring turns. */
+.animate-fz-spin-rev {
+  animation: fz-spin 60s linear infinite reverse;
+}
+
+.animate-fz-float {
+  animation: fz-float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fz-spin,
+  .animate-fz-spin-rev,
+  .animate-fz-float {
+    animation: none;
+  }
+}
